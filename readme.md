@@ -1,24 +1,26 @@
 # Workflow Automation
 Collection of scripts to manage web development workflows
 
-## Getting Started
+## Getting started
 To use this repo you'll need some prerequisites, feel free to skip any you don't need
 
 ### 1. Install pyenv
 
+This will install pyenv which you can use to manage python versions
 ```zsh
 brew install pyenv
 ```
-This will install pyenv which you can use to manage python versions
+
+This will give you some text that you will need to add to the bottom of you `~/.zshrc` file before continuing and then restart your shell. 
 ```zsh
 pyenv init
 ```
-This will give you some text that you will need to add to the bottom of you `~/.zshrc` file before continuing and then restart your shell. 
 
-### 2. Install python
+### 2. Install Poetry
+
 We're going to need python so, lets do that
 ```zsh
-pyenv install 3.10.9
+pyenv install 3.10
 ```
 We are using python 3.10 in this project so lets download that. 
 
@@ -26,11 +28,21 @@ Now we need to tell pyenv we want to use that verision. You can wither set this 
 
 *Global:*
 ```zsh
-pyenv global 3.10.9
+pyenv global 3.10
 ```
 *Local:*
 ```zsh
-pyenv local 3.10.9
+pyenv local 3.10
+```
+
+Install the poetry library
+```zsh
+pip3 install poetry
+```
+
+Finally, run the command
+```zsh
+wfa --help
 ```
 
 ## Sources
