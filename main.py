@@ -1,7 +1,7 @@
 # Importing the necessary modules
 import argparse
 import click
-from app.backup import *
+from browser_automation.backup import *
 
 # #  Parse arguments
 # parser = argparse.ArgumentParser()

@@ -37,4 +37,6 @@ pyenv local 3.10.9
 
 https://medium.com/nerd-for-tech/how-to-build-and-distribute-a-cli-tool-with-python-537ae41d9d78
 
-https://docs.python.org/3.7/distutils/examples.html
+https://dev.to/bowmanjd/build-command-line-tools-with-python-poetry-4mnc
+
+https://python-poetry.org/docs/basic-usage/
