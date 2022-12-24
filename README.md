@@ -44,6 +44,9 @@ Finally, run the command
 ```zsh
 poetry run wfa --help
 ```
+For more information on how to package this repo, see https://python-poetry.org/docs/
+
+Production version's will be in the releases section of the repo once this tool done being developed! ✨
 
 ## Sources
 
