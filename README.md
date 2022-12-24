@@ -42,7 +42,7 @@ pip3 install poetry
 
 Finally, run the command
 ```zsh
-wfa --help
+poetry run wfa --help
 ```
 
 ## Sources
