@@ -11,14 +11,11 @@ from browser_automation.backup import *
 # parser.add_argument("-d", "--development")
 # args = parser.parse_args()
 
-
 @click.group()
 def cli():
     pass
 
-@cli.command()
-@click.option('-n', '--name', type=str, help='Name to greet', default='World')
-def hello(name):
-    click.echo(f'Hello {name}')
+cli.add_command(backup)
 
-# TODO: Write the main function to do the things
+if __name__ == '__main__':
+    cli()
