@@ -9,6 +9,7 @@ import subprocess
 import click
 import time
 from browser_automation.helpers import command
+from browser_automation.helpers import crawl_dirs
 
 @click.command()
 @click.option('--dir', '-d', required=True, default="~/public_html")
@@ -61,7 +62,8 @@ def backup(dir, site_content, site_content_include):
     site_content_include=["./wp-content/plugins", "./wp-content/themes"]
 
     with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as zip_ref:
-        files = crawl_fs(site_content_include)
+        files = crawl_dirs(site_content_include)
+
         with click.progressbar(
             files,
             label='Zipping archive',
@@ -73,24 +75,5 @@ def backup(dir, site_content, site_content_include):
 
     zip_ref.close()
 
-
-    # # Zipping the wp-content folder
-    # subprocess.run(["zip", "-rq", os.path.expanduser("~/wfa-backups/") + 
-    #     f"{datetime.date.today():%d%m%y}" + f"{id}_wp-content.zip", 
-    #     "./wp-content/plugins/", "./wp-content/mu-plugins/", "./wp-content/themes/"])
-
     # Printing the success message
     click.echo(f"\033[1;32mBackup #{datetime.date.today():%d%m%y}{id} Complete\033[0m")
-
-def crawl_fs(dirs):
-    out = [];
-    for path in dirs:
-        for folder_name, subfolders, filenames in os.walk(path):
-            for filename in filenames:
-                file_path = os.path.join(folder_name, filename)
-                out.append(file_path)
-
-    return out
-
-def test():
-    return"it worked"
