@@ -55,3 +55,5 @@ https://medium.com/nerd-for-tech/how-to-build-and-distribute-a-cli-tool-with-pyt
 https://dev.to/bowmanjd/build-command-line-tools-with-python-poetry-4mnc
 
 https://python-poetry.org/docs/basic-usage/
+
+https://click.palletsprojects.com/en/8.1.x/api/
