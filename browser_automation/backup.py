@@ -3,7 +3,6 @@
 # Importing the necessary modules
 import datetime
 import os
-import shutil
 import zipfile
 import random
 import subprocess
@@ -59,14 +58,18 @@ def backup(dir, site_content, site_content_include):
     zip_name= "dev.zip"
 
     # TODO: fix this 🤦‍♀️
-    site_content_include=["/plugins", "/themes"]
+    site_content_include=["./wp-content/plugins", "./wp-content/themes"]
 
     with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as zip_ref:
-        for path in site_content_include:
-            for folder_name, subfolders, filenames in os.walk(site_content + path):
-                for filename in filenames:
-                    file_path = os.path.join(folder_name, filename)
-                    zip_ref.write(file_path, arcname=os.path.relpath(file_path, site_content))
+        files = crawl_fs(site_content_include)
+        with click.progressbar(
+            files,
+            label='Zipping archive',
+            item_show_func=lambda f: os.path.split(f"./{f}")[-1] if f is not None else ''
+
+        ) as bar:
+            for file_path in bar:
+                zip_ref.write(file_path, arcname=os.path.relpath(file_path, site_content))
 
     zip_ref.close()
 
@@ -79,5 +82,15 @@ def backup(dir, site_content, site_content_include):
     # Printing the success message
     click.echo(f"\033[1;32mBackup #{datetime.date.today():%d%m%y}{id} Complete\033[0m")
 
+def crawl_fs(dirs):
+    out = [];
+    for path in dirs:
+        for folder_name, subfolders, filenames in os.walk(path):
+            for filename in filenames:
+                file_path = os.path.join(folder_name, filename)
+                out.append(file_path)
+
+    return out
+
 def test():
-    print("it worked")
+    return"it worked"
