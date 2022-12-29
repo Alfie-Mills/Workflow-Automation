@@ -11,8 +11,8 @@ from browser_automation.cache import cache
 # parser.add_argument("-s", "--staging")
 # parser.add_argument("-d", "--development")
 # args = parser.parse_args()
-
-@click.group()
+CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
+@click.group(context_settings=CONTEXT_SETTINGS)
 def cli():
     """
     Command line tool to manage websites
