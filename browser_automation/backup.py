@@ -1,5 +1,3 @@
-# Parts of this code was origially a bash script, converted into Python3 by OpenAI's ChatGPT
-
 # Importing the necessary modules
 import datetime
 import os
@@ -7,7 +5,6 @@ import zipfile
 import random
 import subprocess
 import click
-import time
 from browser_automation.helpers import command
 from browser_automation.helpers import crawl_dirs
 
@@ -17,13 +14,6 @@ from browser_automation.helpers import crawl_dirs
 @click.option('--site-content-include', '-ci', default=["/plugins", "/themes"])
 def backup(dir, site_content, site_content_include):
 
-    # with click.progressbar(length=100, label="backing up") as bar:
-    #     for i in range(100):
-    #         bar.update(i)
-    #         time.sleep(0.1)
-    #
-    # print("Backup complete")
-    
     if not os.path.exists(os.path.abspath(site_content)):
         click.echo(f"{site_content} does not exist")
         return
