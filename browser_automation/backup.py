@@ -49,6 +49,8 @@ def backup(dir, site_content, site_content_include):
     zip_name= "dev.zip"
 
     # TODO: fix this 🤦‍♀️
+    #! should not be wordpress specific, however can be by default. Must be able to change directories with the --site-content param
+    
     site_content_include=["./wp-content/plugins", "./wp-content/themes"]
 
     with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as zip_ref:
