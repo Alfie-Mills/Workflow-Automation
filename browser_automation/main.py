@@ -2,6 +2,7 @@
 import argparse
 import click
 from browser_automation.backup import *
+from browser_automation.cache import cache
 
 # #  Parse arguments
 # parser = argparse.ArgumentParser()
@@ -13,9 +14,16 @@ from browser_automation.backup import *
 
 @click.group()
 def cli():
+    """
+    Command line tool to manage websites
+
+    Some command are specific to wordpress, such as she cache module.
+    """
     pass
 
 cli.add_command(backup)
+
+cli.add_command(cache)
 
 if __name__ == '__main__':
     cli()
