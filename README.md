@@ -4,6 +4,15 @@ Collection of scripts to manage web development workflows
 ## Getting started
 To use this repo you'll need some prerequisites, feel free to skip any you don't need
 
+### Prerequisites
+You will need to make sure that you have these commands avaliable
+ - wp *(if you are using wordpress)*
+ - rsync
+ - ssh
+
+It's also worth noting that this package was built on macOS and as such should work with UNIX compliant systems.
+For windows based systems, it is reccomended to run this under Windows Subsystem for Linux
+
 ### 1. Install pyenv
 
 This will install pyenv which you can use to manage python versions
