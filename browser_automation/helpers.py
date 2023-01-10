@@ -15,3 +15,5 @@ def crawl_dirs(dirs: list=[]):
                 file_path = os.path.join(folder_name, filename)
                 out.append(file_path)
     return out
+
+wp_default_args="--exec=\"error_reporting(E_ALL ^ E_DEPRECATED);define('WP_MEMORY_LIMIT', '512M');\""
