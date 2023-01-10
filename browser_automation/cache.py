@@ -1,6 +1,7 @@
 import click
 import subprocess
 from browser_automation.helpers import command
+from browser_automation.helpers import wp_default_args
 
 @click.group()
 def cache():
@@ -17,9 +18,9 @@ def flush(cache_only):
         return
 
     try:
-        subprocess.run(["wp --exec='error_reporting(E_ALL ^ E_DEPRECATED);'", "cache", "flush"])
+        subprocess.run(["wp", wp_default_args, "cache", "flush"])
         if not cache_only:
-            subprocess.run(["wp --exec='error_reporting(E_ALL ^ E_DEPRECATED);'", "rewrite", "clear"])
+            subprocess.run(["wp", wp_default_args, "rewrite", "clear"])
     except:
         click.echo(click.style('Could not flush cache', fg='red', bold=True))
     return

@@ -7,6 +7,7 @@ import subprocess
 import click
 from browser_automation.helpers import command
 from browser_automation.helpers import crawl_dirs
+from browser_automation.helpers import wp_default_args
 
 @click.command()
 @click.option('--dir', '-d', required=True, default="~/public_html")
@@ -40,7 +41,7 @@ def backup(dir, site_content, site_content_include):
     
     # # Dumping the database
     try:
-        subprocess.run(["wp --exec='error_reporting(E_ALL ^ E_DEPRECATED);'", "db", "dump", os.path.expanduser("~/wfa-backups/") + 
+        subprocess.run(["wp", wp_default_args, "db", "dump", os.path.expanduser("~/wfa-backups/") + 
             f"{datetime.date.today():%d%m%y}" + f"{id:06}_db.sql"])
     except:
         click.echo(click.style('Could not dump database', fg='red', bold=True))
