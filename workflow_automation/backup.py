@@ -5,9 +5,9 @@ import zipfile
 import random
 import subprocess
 import click
-from browser_automation.helpers import command
-from browser_automation.helpers import crawl_dirs
-from browser_automation.helpers import wp_default_args
+from workflow_automation.helpers import command
+from workflow_automation.helpers import crawl_dirs
+from workflow_automation.helpers import wp_default_args
 
 @click.command()
 @click.option('--dir', '-d', required=True, default="~/public_html")

@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "browser-automation"
+name = "workflow-automation"
 version = "0.1.0"
 description = ""
 authors = ["alfie-mills <alfie.mills@outlook.com>"]
 readme = "README.md"
-packages = [{include = "browser_automation"}]
+packages = [{include = "workflow_automation"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -16,4 +16,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-wfa="browser_automation.main:cli"
+wfa="workflow_automation.main:cli"

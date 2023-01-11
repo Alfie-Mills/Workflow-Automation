@@ -1,7 +1,7 @@
 import click
 import subprocess
-from browser_automation.helpers import command
-from browser_automation.helpers import wp_default_args
+from workflow_automation.helpers import command
+from workflow_automation.helpers import wp_default_args
 
 @click.group()
 def cache():

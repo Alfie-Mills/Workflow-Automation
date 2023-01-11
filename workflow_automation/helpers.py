@@ -8,6 +8,7 @@ def command(name):
 
 def crawl_dirs(dirs: list=[]):
     """Crawl's an array of directory and gets every filepath in those directories"""
+    import os;
     out = [];
     for path in dirs:
         for folder_name, subfolders, filenames in os.walk(path):
