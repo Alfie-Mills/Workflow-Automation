@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "browser-automation"
+name = "workflow-automation"
 version = "0.1.0"
 description = ""
 authors = ["alfie-mills <alfie.mills@outlook.com>"]
