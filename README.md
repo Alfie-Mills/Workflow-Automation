@@ -49,6 +49,11 @@ Install the poetry library
 pip3 install poetry
 ```
 
+Install Dependancies
+```zsh
+poetry install
+```
+
 Finally, run the command
 ```zsh
 poetry run wfa --help
